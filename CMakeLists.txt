@@ -150,12 +150,12 @@ write_basic_package_version_file("${CMAKE_CONFIG_VERSION_FILE_NAME}"
 )
 
 set(PKG_CONFIG_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc")
-configure_file("${CMAKE_SOURCE_DIR}/pkgconfig.pc.in" "${PKG_CONFIG_FILE_NAME}" @ONLY)
+configure_file("${CMAKE_CURRENT_SOURCE_DIR}/pkgconfig.pc.in" "${PKG_CONFIG_FILE_NAME}" @ONLY)
 install(FILES "${PKG_CONFIG_FILE_NAME}"
 	DESTINATION "${CMAKE_INSTALL_LIBDIR_ARCHIND}/pkgconfig"
 )
 
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -ggdb --std=c++1y -pedantic")
+set(CMAKE_CXX_FLAGS "-Wall -ggdb --std=c++1y -pedantic")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
 
